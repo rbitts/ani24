@@ -152,7 +152,7 @@ class LogicAni24(object):
     @staticmethod
     def get_filename(maintitle, title, date):
         try:
-            match = re.compile(r'(?P<title>.*?)\s?((?P<season>\d+)기)?\s?((?P<epi_no>\d.[\d]*)(?=[^\d]).*화)').search(title)
+            match = re.compile(r'(?P<title>.*?)\s?((?P<season>\d+)기)?\s?((?P<epi_no>\d[\d]*)(?=[^\d]).*화)').search(title)
             if match:
                 if match.group('season') is not None:
                     season = int(match.group('season'))
