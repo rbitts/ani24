@@ -62,18 +62,18 @@ class LogicAni24(object):
             else:
                 return None
             url2 = 'https://fileiframe.com/ani_video4/%s.html?player=' % episode_id
-            #logger.debug(url2)
+            logger.debug(url2)
             data = LogicAni24.get_html(url2)
 
-            #logger.debug(data)
+            logger.debug(data)
             #video_url = 'http%s.mp4' % data.split('.mp4"')[0].split('"http')[-1]
             tmp = 'sources: [{"file":"'
             idx1 = data.find(tmp) + len(tmp)
             idx2 = data.find('"', idx1)
-            #logger.debug(idx1)
-            #logger.debug(idx2)
+            logger.debug(idx1)
+            logger.debug(idx2)
             video_url = data[idx1:idx2]
-            #logger.debug(video_url)
+            logger.debug(video_url)
 
             #https://files0.filegroupa.com/files/0/new/id_39450.mp4
             #https://files0.filegroupa.com/redirect.php?path=%2ffiles%2f0%2fnew%2fid_39450.mp4
